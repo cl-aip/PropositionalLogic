@@ -1,0 +1,23 @@
+(eval-when (:compile-toplevel :load-toplevel :execute)
+  (require :asdf)
+  )
+
+(defpackage :proposotional-system
+  (:use :common-lisp :asdf))
+
+(in-package :proposotional-system)
+
+(defsystem :proposotional
+  :name "Propositional Logic"
+  :author "AIMA"
+  :maintainer "Seiji Koide <koide@ontolonomy.co.jp>"
+  :version "0.0.1"
+  :license "AIMA"
+  :description "Propositional Logic program from AIMA"
+  :long-description "Propositional Logic program from AIMA and modified by Seiji Koid."
+  :components
+  ((:file "utilities")
+   (:file "unify")
+   (:file "infix")
+   (:file "normal")
+   (:file "prop")))
