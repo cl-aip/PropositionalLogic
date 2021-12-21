@@ -154,6 +154,7 @@
 (defun sentence-output-form (sentence)
   "Convert a prefix sentence back into an infix notation with brief operators."
   (format nil "~{~A~^ ~}"
-    (mklist (sublis '((and . "È") (not . "~") (or . "É") (equiv . "Ì") (imply . "Ë"))
+    (mklist (sublis #-:mswindows '((and . "âˆ§") (not . "~") (or . "âˆ¨") (equiv . "â‡E) (imply . "â‡E))
+                    #+:mswindows '((and . "È") (not . "~") (or . "É") (equiv . "Ì") (imply . "Ë"))
                     (prefix->infix sentence)))))
 
